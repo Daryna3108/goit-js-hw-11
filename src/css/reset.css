@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+body {
+  font-family: "Montserrat", sans-serif;
+  padding: 40px 20px;
+  background-color: #fafafa;
+  color: #2e2f42;
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
 p {
   margin: 0;
 }
@@ -31,4 +38,129 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.form input {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  width: 320px;
+  outline: none;
+  transition: border-color 250ms ease;
+}
+
+.form input:focus {
+  border-color: #480655;
+}
+
+.form button {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  background-color: #480655;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 250ms ease, box-shadow 250ms ease;
+}
+
+.form button:hover {
+  background-color: #643469;
+  box-shadow: 0px 4px 12px rgba(72, 6, 85, 0.2);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  background-color: #fcf6fd;
+  border: 1px solid #e0d5e3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 20px rgba(72, 6, 85, 0.15);
+}
+
+.gallery-link {
+  display: block;
+  cursor: zoom-in;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #2e2f42;
+}
+
+.info-item b {
+  font-weight: 600;
+  color: #480655;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  min-height: 48px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #e0d5e3;
+  border-bottom-color: #480655;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader.is-hidden {
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
